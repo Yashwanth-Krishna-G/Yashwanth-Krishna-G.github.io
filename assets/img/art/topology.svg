@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Topology optimisation schematic — optimised cantilever structure inside a design domain">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#948b7a" stroke-opacity=".14" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="mat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff5e1f"/>
+      <stop offset="1" stop-color="#ff8f5e"/>
+    </linearGradient>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ff5e1f"/>
+    </marker>
+    <marker id="dim" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#948b7a"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#grid)"/>
+
+  <!-- design domain -->
+  <rect x="150" y="110" width="500" height="280" fill="none" stroke="#948b7a" stroke-opacity=".7" stroke-width="1.5" stroke-dasharray="7 7"/>
+  <text x="170" y="98" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3" fill="#948b7a">DESIGN DOMAIN &#937;</text>
+
+  <!-- fixed support hatching -->
+  <line x1="150" y1="110" x2="150" y2="390" stroke="#948b7a" stroke-width="2.5"/>
+  <g stroke="#948b7a" stroke-opacity=".8" stroke-width="1.5">
+    <line x1="150" y1="122" x2="132" y2="140"/>
+    <line x1="150" y1="152" x2="132" y2="170"/>
+    <line x1="150" y1="182" x2="132" y2="200"/>
+    <line x1="150" y1="212" x2="132" y2="230"/>
+    <line x1="150" y1="242" x2="132" y2="260"/>
+    <line x1="150" y1="272" x2="132" y2="290"/>
+    <line x1="150" y1="302" x2="132" y2="320"/>
+    <line x1="150" y1="332" x2="132" y2="350"/>
+    <line x1="150" y1="362" x2="132" y2="380"/>
+  </g>
+  <text x="96" y="255" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a" transform="rotate(-90 96 255)">FIXED</text>
+
+  <!-- optimised material: organic branch network -->
+  <g stroke="url(#mat)" fill="none" stroke-linecap="round">
+    <path d="M150 140 C 260 150, 380 185, 600 240" stroke-width="21"/>
+    <path d="M150 360 C 260 350, 380 315, 600 258" stroke-width="21"/>
+    <path d="M150 250 C 240 250, 300 245, 360 250" stroke-width="12"/>
+    <path d="M215 152 C 250 200, 280 290, 232 346" stroke-width="10"/>
+    <path d="M232 346 C 300 300, 330 220, 340 172" stroke-width="9"/>
+    <path d="M340 172 C 380 240, 420 290, 452 318" stroke-width="9"/>
+    <path d="M452 318 C 480 270, 500 230, 510 208" stroke-width="8"/>
+    <path d="M510 208 C 540 240, 570 250, 600 249" stroke-width="8"/>
+    <path d="M360 250 C 420 255, 480 252, 530 250" stroke-width="6" stroke-opacity=".7"/>
+  </g>
+
+  <!-- load arrow -->
+  <line x1="600" y1="180" x2="600" y2="235" stroke="#ff5e1f" stroke-width="3" marker-end="url(#ah)"/>
+  <circle cx="600" cy="249" r="6" fill="#ff5e1f"/>
+  <text x="616" y="196" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="2" fill="#ff5e1f">P</text>
+
+  <!-- dimension line -->
+  <line x1="150" y1="430" x2="650" y2="430" stroke="#948b7a" stroke-width="1.2" marker-start="url(#dim)" marker-end="url(#dim)"/>
+  <line x1="150" y1="395" x2="150" y2="440" stroke="#948b7a" stroke-opacity=".5" stroke-width="1"/>
+  <line x1="650" y1="395" x2="650" y2="440" stroke="#948b7a" stroke-opacity=".5" stroke-width="1"/>
+  <text x="352" y="452" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a">L = DOMAIN WIDTH</text>
+
+  <!-- annotations -->
+  <text x="170" y="376" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a" fill-opacity=".85">&#961;(x) &#8712; [0, 1]</text>
+  <text x="470" y="136" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a" fill-opacity=".85">min C(&#961;) s.t. V &#8804; V*</text>
+</svg>

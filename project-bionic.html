@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compliant Bionic Arm — Affan Khan</title>
+  <meta name="description"
+    content="An actively controlled, flexible 3D-printed bionic arm using compliant mechanisms — an affordable, adaptive prosthetic developed at IIT Guwahati." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Affan Khan <small>Mech × AI</small></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="life.html">Life</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle light/dark theme">
+            <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="study-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>Bionic Arm
+        </div>
+        <h1>Active Flexible Compliant-Based Bionic Arm</h1>
+        <div class="meta">
+          <span class="tag">Compliant Mechanism</span><span class="tag">ESP32</span><span class="tag">PD Control</span>
+          <span class="tag">3D Printing</span><span class="tag">ANSYS</span>
+        </div>
+        <p class="study-lead">
+          A biomedical-device project under <strong>Prof. S. Kanagaraj</strong> at IIT Guwahati — a
+          lightweight, compliant, 3D-printed bionic arm for affordable and adaptive prosthetics.
+        </p>
+        <div class="study-banner"><img class="contain" src="assets/img/art/bionic.svg" alt="Compliant bionic arm schematic" /></div>
+
+        <div class="facts">
+          <div class="fact"><span class="k">Structure</span><span class="v">Compliant <small>no rigid joints</small></span></div>
+          <div class="fact"><span class="k">Material</span><span class="v">PLA <small>3D-printed</small></span></div>
+          <div class="fact"><span class="k">Controller</span><span class="v">ESP32 <small>PD loop</small></span></div>
+          <div class="fact"><span class="k">Input</span><span class="v">EMG <small>muscle sensors</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>Overview</h3>
+            <p>
+              The project develops an <strong>actively controlled, flexible bionic arm</strong> that uses
+              <strong>compliant mechanisms</strong> and <strong>additive manufacturing</strong> to cut
+              mechanical complexity and improve comfort. It is cost-effective, customisable, and mimics
+              natural motion without traditional rigid joints.
+            </p>
+          </div>
+          <div class="feature-text">
+            <h3>Core concept</h3>
+            <p>
+              Motion transfers through <strong>elastic deformation</strong> rather than discrete moving
+              parts:
+            </p>
+            <ul>
+              <li><strong>Muscle-sensor signals</strong> drive servo motors via an <strong>ESP32</strong>.</li>
+              <li><strong>3D-printed PLA</strong> structures keep it lightweight and biocompatible.</li>
+              <li><strong>PD control</strong> reduces latency and improves motion precision.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>Implementation &amp; analysis</h3>
+            <p>
+              The design was iteratively analysed in <strong>ANSYS Mechanical</strong> for stress and
+              deformation under real operating conditions. Once optimised, all components were
+              <strong>3D printed</strong> and assembled into a functional prototype with responsive
+              actuation.
+            </p>
+            <h3 style="margin-top:34px;">Achievements</h3>
+            <ul>
+              <li>A <strong>fully functional active bionic-arm prototype</strong>.</li>
+              <li>Reduced response lag and improved accuracy via PD-based actuation.</li>
+              <li>Compliant design validated for complex motion paths in simulation and testing.</li>
+            </ul>
+          </div>
+          <div class="feature-media">
+            <img src="assets/img/about/about-1.jpg" alt="Presenting the bionic arm prototype" loading="lazy" />
+            <p class="media-caption">The prototype, presented to my project guide.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" style="grid-template-columns:1fr;">
+          <div class="feature-text">
+            <h3>Future scope</h3>
+            <ul>
+              <li>Integrate <strong>tactile feedback</strong> using strain-gauge sensors.</li>
+              <li>Expand to <strong>multi-DOF actuation</strong> for greater flexibility.</li>
+              <li>Explore <strong>Nitinol-wire actuators</strong> for muscle-like motion and better bio-mimicry.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <a class="next-proj" href="project-supra.html">
+      <div class="container">
+        <span class="np-label">Next project</span>
+        <span class="np-title">Supra SAE India
+          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:0;padding-top:0;">
+        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span><a href="index.html#contact">Get in touch</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

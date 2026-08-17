@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Affan Khan</title>
+  <meta name="description"
+    content="The full project index — AI-driven topology optimisation, turbomachinery CFD, aircraft design, mechatronics and maker builds by Affan Khan." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Affan Khan <small>Mech × AI</small></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="life.html">Life</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle light/dark theme">
+            <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="study-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Projects</div>
+        <h1>The project <span class="it" style="font-style:italic;color:var(--accent);">index.</span></h1>
+        <p class="study-lead">
+          Everything on one shelf — research, simulation, vehicles and weekend hardware. Filter by
+          discipline or browse the lot.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:56px;">
+      <div class="container">
+
+        <div class="filters reveal">
+          <button class="chip on" data-filter="all">All</button>
+          <button class="chip" data-filter="ai">AI &amp; ML</button>
+          <button class="chip" data-filter="cfd">CFD &amp; Simulation</button>
+          <button class="chip" data-filter="vehicles">Vehicles</button>
+          <button class="chip" data-filter="maker">Hardware &amp; Maker</button>
+        </div>
+
+        <div class="grid grid-3">
+
+          <a href="project-topology.html" class="card reveal" data-cat="ai cfd">
+            <div class="card-media"><img class="contain" src="assets/img/art/topology.svg" alt="Topology optimisation schematic" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Generative AI for Topology Optimisation</h3>
+              <p>M.Tech research — deep-learning surrogates that output optimised material layouts in a
+                single forward pass.</p>
+              <div class="tags"><span class="tag">Deep Learning</span><span class="tag">GANs</span><span class="tag">Topology Opt.</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-turbine.html" class="card reveal" data-cat="cfd">
+            <div class="card-media"><img src="assets/img/projects/turbine/tile.jpg" alt="Radial turbine runner CAD render" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Parametric CFD of a Radial Turbine</h3>
+              <p>A fully parametrised turbine runner driven through ANSYS Fluent to map power and
+                pressure drop across the design space.</p>
+              <div class="tags"><span class="tag">ANSYS Fluent</span><span class="tag">SolidWorks</span><span class="tag">Turbomachinery</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-cfd.html" class="card reveal" data-cat="cfd">
+            <div class="card-media"><img src="assets/img/projects/cfd/tile.png" alt="CFD solver visualisation" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>CFD Solvers from Scratch</h3>
+              <p>Heat conduction, lid-driven cavity and wave propagation — numerical solvers written
+                from a blank file in C and MATLAB.</p>
+              <div class="tags"><span class="tag">C</span><span class="tag">MATLAB</span><span class="tag">Numerical Methods</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-aero.html" class="card reveal" data-cat="vehicles cfd">
+            <div class="card-media"><img src="assets/img/projects/aero/photo-1.jpg" alt="SAE Aero aircraft" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>SAE Aero Design UAV</h3>
+              <p>A 2 m-wingspan, 5 kg-payload aircraft — fuselage CAD, full-vehicle CFD and a solar
+                endurance extension.</p>
+              <div class="tags"><span class="tag">Aerodynamics</span><span class="tag">ANSYS CFX</span><span class="tag">Composites</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-bionic.html" class="card reveal" data-cat="maker">
+            <div class="card-media"><img class="contain" src="assets/img/art/bionic.svg" alt="Compliant bionic arm schematic" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Compliant Bionic Arm</h3>
+              <p>An actively controlled, 3D-printed prosthetic that flexes through compliant mechanisms
+                instead of rigid joints.</p>
+              <div class="tags"><span class="tag">ESP32</span><span class="tag">PD Control</span><span class="tag">3D Printing</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-supra.html" class="card reveal" data-cat="vehicles">
+            <div class="card-media"><img class="contain" src="assets/img/art/supra.svg" alt="Supra SAE car schematic" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Supra SAE India</h3>
+              <p>Powertrain design for a formula-style race car — engine mounts, sprockets and 40+ CAD
+                components.</p>
+              <div class="tags"><span class="tag">Powertrain</span><span class="tag">FEA</span><span class="tag">SolidWorks</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-maker.html" class="card reveal" data-cat="maker">
+            <div class="card-media"><img class="contain" src="assets/img/art/water.svg" alt="Smart water-filling system schematic" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Smart Water-Filling System</h3>
+              <p>A WiFi-controlled filling rig with water-quality checking — start, stop and monitor
+                from a phone.</p>
+              <div class="tags"><span class="tag">IoT</span><span class="tag">ESP / WiFi</span><span class="tag">Sensors</span></div>
+              <span class="card-cta">Build notes
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-maker.html#speaker" class="card reveal" data-cat="maker">
+            <div class="card-media"><img class="contain" src="assets/img/art/speaker.svg" alt="3D-printed speaker cross-section" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>3D-Printed Speaker</h3>
+              <p>A custom speaker with a fully 3D-printed enclosure — designed in CAD, printed and
+                assembled from scratch.</p>
+              <div class="tags"><span class="tag">3D Printing</span><span class="tag">CAD</span><span class="tag">Audio</span></div>
+              <span class="card-cta">Build notes
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:0;padding-top:0;">
+        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span><a href="index.html#contact">Get in touch</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

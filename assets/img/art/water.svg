@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Smart water-filling system schematic — tank, sensors, pump and WiFi microcontroller">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#948b7a" stroke-opacity=".14" stroke-width="1"/>
+    </pattern>
+    <marker id="flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ff5e1f"/>
+    </marker>
+  </defs>
+  <rect width="800" height="500" fill="url(#grid)"/>
+
+  <!-- tank -->
+  <path d="M110 140 L330 140 L330 400 Q330 414 316 414 L124 414 Q110 414 110 400 Z" fill="none" stroke="#948b7a" stroke-width="2.4"/>
+  <text x="150" y="124" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3" fill="#948b7a">STORAGE TANK</text>
+
+  <!-- water -->
+  <path d="M118 252 q17 -10 34 0 t34 0 t34 0 t34 0 t34 0 t34 0" fill="none" stroke="#ff5e1f" stroke-width="2.2"/>
+  <g stroke="#ff5e1f" stroke-opacity=".35" stroke-width="1.6" fill="none">
+    <path d="M118 292 q17 -8 34 0 t34 0 t34 0 t34 0 t34 0 t34 0"/>
+    <path d="M118 332 q17 -8 34 0 t34 0 t34 0 t34 0 t34 0 t34 0"/>
+    <path d="M118 372 q17 -8 34 0 t34 0 t34 0 t34 0 t34 0 t34 0"/>
+  </g>
+
+  <!-- level sensor -->
+  <line x1="182" y1="140" x2="182" y2="246" stroke="#948b7a" stroke-width="1.6" stroke-dasharray="5 5"/>
+  <circle cx="182" cy="252" r="8" fill="none" stroke="#948b7a" stroke-width="2"/>
+  <text x="196" y="216" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a">LEVEL</text>
+
+  <!-- quality probe -->
+  <line x1="272" y1="140" x2="272" y2="300" stroke="#948b7a" stroke-width="1.6" stroke-dasharray="5 5"/>
+  <rect x="264" y="300" width="16" height="26" rx="4" fill="none" stroke="#948b7a" stroke-width="2"/>
+  <text x="286" y="322" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a">TDS</text>
+
+  <!-- outlet pipe → valve → pump → spout -->
+  <path d="M330 386 L436 386" fill="none" stroke="#948b7a" stroke-width="2.2"/>
+  <!-- valve (bowtie) -->
+  <path d="M436 372 L464 400 L464 372 L436 400 Z" fill="none" stroke="#948b7a" stroke-width="2"/>
+  <text x="418" y="430" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a">VALVE</text>
+  <path d="M464 386 L520 386" fill="none" stroke="#948b7a" stroke-width="2.2"/>
+  <!-- pump -->
+  <circle cx="548" cy="386" r="28" fill="none" stroke="#948b7a" stroke-width="2.2"/>
+  <path d="M536 398 L560 386 L536 374 Z" fill="#948b7a"/>
+  <text x="528" y="444" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a">PUMP</text>
+  <!-- riser + spout -->
+  <path d="M576 386 L640 386 L640 216 L688 216" fill="none" stroke="#948b7a" stroke-width="2.2"/>
+  <path d="M688 216 L688 232" fill="none" stroke="#948b7a" stroke-width="2.2"/>
+  <!-- pour stream -->
+  <line x1="688" y1="238" x2="688" y2="292" stroke="#ff5e1f" stroke-width="2" stroke-dasharray="3 5" marker-end="url(#flow)"/>
+  <!-- glass -->
+  <path d="M666 300 L710 300 L704 352 L672 352 Z" fill="none" stroke="#948b7a" stroke-width="2"/>
+
+  <!-- flow arrows -->
+  <line x1="360" y1="386" x2="392" y2="386" stroke="#ff5e1f" stroke-width="2" marker-end="url(#flow)"/>
+  <line x1="640" y1="340" x2="640" y2="300" stroke="#ff5e1f" stroke-width="2" marker-end="url(#flow)"/>
+
+  <!-- ESP + WiFi -->
+  <rect x="440" y="120" width="140" height="56" rx="8" fill="none" stroke="#948b7a" stroke-width="2.2"/>
+  <text x="462" y="154" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3" fill="#948b7a">ESP &#183; WIFI</text>
+  <g stroke="#ff5e1f" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M497 100 a18 18 0 0 1 26 0"/>
+    <path d="M489 84  a30 30 0 0 1 42 0"/>
+    <circle cx="510" cy="112" r="2.6" fill="#ff5e1f"/>
+  </g>
+
+  <!-- control lines -->
+  <g stroke="#948b7a" stroke-opacity=".6" stroke-width="1.4" stroke-dasharray="4 5" fill="none">
+    <path d="M440 148 L182 148 L182 236"/>
+    <path d="M440 166 L272 166 L272 292"/>
+    <path d="M470 176 L450 364"/>
+    <path d="M540 176 L548 356"/>
+  </g>
+
+  <!-- phone -->
+  <rect x="656" y="96" width="56" height="96" rx="10" fill="none" stroke="#948b7a" stroke-width="2"/>
+  <line x1="674" y1="178" x2="694" y2="178" stroke="#948b7a" stroke-width="2"/>
+  <path d="M608 118 q14 10 0 20 M622 108 q22 20 0 40" stroke="#ff5e1f" stroke-opacity=".7" stroke-width="1.8" fill="none"/>
+  <text x="636" y="76" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2" fill="#948b7a">REMOTE START/STOP</text>
+</svg>
