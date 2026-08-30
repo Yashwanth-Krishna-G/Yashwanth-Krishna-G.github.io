@@ -55,10 +55,9 @@
         </div>
         <p class="study-lead">
           Engineered a 2D fractional-step CFD solver on a staggered grid from scratch. Designed to accurately simulate 
-          complex fluid dynamics including lid-driven cavity flows and the vortex shedding of a square cylinder, 
+          complex fluid dynamics including the vortex shedding of a square cylinder and lid-driven cavity flows, 
           with heavy emphasis on hardware-accelerated computing.
         </p>
-        <div class="study-banner"><img src="assets/img/projects/cfd/fdm.png" alt="Finite-difference CFD visualisation" /></div>
       </div>
     </section>
 
@@ -66,24 +65,6 @@
       <div class="container">
 
         <div class="feature-row">
-          <div class="feature-text">
-            <h3>Fractional-Step & Lid-Driven Cavity</h3>
-            <p>
-              The solver utilizes a fractional-step (projection) method on a staggered grid. An intermediate velocity field is first computed, followed by solving the Pressure Poisson Equation to enforce mass conservation.
-            </p>
-            <div class="equation">$$ \nabla^2 p^{n+1} = \frac{\rho}{\Delta t} \nabla \cdot \mathbf{u}^* $$</div>
-            <p>
-              The classic lid-driven cavity benchmark was used to validate the core vorticity and stream-function mechanics, successfully capturing the primary and secondary corner vortices at various Reynolds numbers.
-            </p>
-          </div>
-          <div class="feature-media">
-            <video autoplay loop muted playsinline controls><source src="assets/video/lid-driven-cavity.mp4" type="video/mp4" /></video>
-            <img src="assets/img/projects/cfd/streamline.png" alt="Streamlines for lid-driven cavity" loading="lazy" />
-            <p class="media-caption">Primary and secondary vortices in the lid-driven cavity flow.</p>
-          </div>
-        </div>
-
-        <div class="feature-row reverse">
           <div class="feature-text">
             <h3>Square Cylinder & Vortex Shedding</h3>
             <p>
@@ -101,14 +82,14 @@
           </div>
         </div>
 
-        <div class="feature-row">
+        <div class="feature-row reverse">
           <div class="feature-text">
             <h3>GPU Acceleration & Ansys Validation</h3>
             <p>
-              To drastically reduce compute times, the Fortran codebase was parallelized using shared-memory and hardware-accelerator directives. 
+              To drastically reduce compute times for the square cylinder simulation, the Fortran codebase was parallelized. The outer loop iterated with a time step of 0.001 up to 200 seconds, with the momentum and Pressure Poisson solvers held to a strict convergence criteria (\(L_\infty\) norm > 1e-6).
             </p>
             <ul style="margin-bottom: 24px; color: var(--text-muted); line-height: 1.6;">
-              <li><strong>OpenMP:</strong> Achieved a <strong>3.2x speedup</strong> over serial execution across multi-core CPU architectures.</li>
+              <li><strong>OpenMP:</strong> Achieved a <strong>3.2x speedup</strong> over serial execution across multi-core architectures.</li>
               <li><strong>OpenACC:</strong> Offloaded highly parallelizable kernels to the GPU, yielding a <strong>4.05x speedup</strong>.</li>
             </ul>
             <p>
@@ -116,12 +97,60 @@
             </p>
           </div>
           <div class="feature-media">
-            <img src="assets/img/projects/cfd/ansys_validation.jpg" alt="Ansys Fluent Cd Validation" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
-            <p class="media-caption">Drag coefficient validation against commercial Ansys Fluent data.</p>
+            <style>
+              .perf-box { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 20px; overflow-x: auto; }
+              .perf-table { width: 100%; border-collapse: collapse; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; margin-bottom: 24px; }
+              .perf-table th, .perf-table td { border-bottom: 1px solid var(--border); padding: 8px 12px; text-align: right; }
+              .perf-table th { color: var(--text-muted); font-weight: 500; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.5px; }
+              .perf-table th:first-child, .perf-table td:first-child { text-align: left; }
+              .perf-table tr:last-child td { border-bottom: none; }
+              .perf-title { font-size: 0.9rem; font-weight: 600; margin-top: 0; margin-bottom: 12px; color: var(--accent); }
+            </style>
+            
+            <div class="perf-box">
+              <h4 class="perf-title">OpenMP Speed Up Details</h4>
+              <table class="perf-table">
+                <tr><th>Threads</th><th>Run time (s)</th><th>Run time (hrs)</th><th>Speed up</th></tr>
+                <tr><td>1</td><td>11420</td><td>3.172</td><td>-</td></tr>
+                <tr><td>2</td><td>6543</td><td>1.818</td><td>1.745</td></tr>
+                <tr><td>4</td><td>4147</td><td>1.152</td><td>2.754</td></tr>
+                <tr><td>6</td><td>3072</td><td>0.853</td><td>3.717</td></tr>
+                <tr><td>8</td><td>3830</td><td>1.064</td><td>2.982</td></tr>
+                <tr><td>10</td><td>3533</td><td>0.981</td><td>3.232</td></tr>
+                <tr><td>12</td><td>3314</td><td>0.921</td><td>3.446</td></tr>
+                <tr><td>14</td><td>2960</td><td>0.822</td><td>3.858</td></tr>
+              </table>
+
+              <h4 class="perf-title" style="margin-bottom: 12px;">OpenACC Observations</h4>
+              <table class="perf-table" style="margin-bottom: 0;">
+                <tr><th>N</th><th>Grid Points</th><th>Run time (s)</th><th>Run time (hrs)</th></tr>
+                <tr><td>12</td><td>106,560</td><td>~3500</td><td>0.98</td></tr>
+                <tr><td>24</td><td>426,240</td><td>~8640</td><td>2.40</td></tr>
+              </table>
+            </div>
+            <p class="media-caption">Hardware acceleration benchmarks showcasing up to 3.85x speedup across multi-core configurations.</p>
           </div>
         </div>
 
-      </div>
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>Fractional-Step & Lid-Driven Cavity</h3>
+            <p>
+              The solver utilizes a fractional-step (projection) method on a staggered grid. An intermediate velocity field is first computed, followed by solving the Pressure Poisson Equation to enforce mass conservation.
+            </p>
+            <div class="equation">$$ \nabla^2 p^{n+1} = \frac{\rho}{\Delta t} \nabla \cdot \mathbf{u}^* $$</div>
+            <p>
+              The classic lid-driven cavity benchmark was used to initially validate the core vorticity and stream-function mechanics, successfully capturing the primary and secondary corner vortices at various Reynolds numbers.
+            </p>
+          </div>
+          <div class="feature-media">
+            <video autoplay loop muted playsinline controls><source src="assets/video/lid-driven-cavity.mp4" type="video/mp4" /></video>
+            <img src="assets/img/projects/cfd/streamline.png" alt="Streamlines for lid-driven cavity" loading="lazy" />
+            <p class="media-caption">Primary and secondary vortices in the lid-driven cavity flow.</p>
+          </div>
+        </div>
+
+      </div> 
     </section>
 
     <a class="next-proj" href="project-bionic.html">
