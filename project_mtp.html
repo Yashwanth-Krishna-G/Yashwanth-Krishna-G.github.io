@@ -58,54 +58,40 @@
           and GPU parallelization of a fluid dynamics solver designed for high-speed compressible flow regimes.
           Targeting extreme atmospheric conditions through high-performance unstructured mesh frameworks.
         </p>
-        <div class="study-banner"><img src="assets/img/projects/cfd/fdm.png" alt="Compressible flow grid visualisation" /></div>
       </div>
     </section>
 
     <section class="section" style="padding-top:0;">
       <div class="container">
+        <div class="prose reveal">
+          
+          <h3>Governing equations & formulation</h3>
+          <p>
+            The core algorithm employs a cell-centered <strong>Finite Volume Method (FVM)</strong> on 
+            unstructured meshes to solve the fully coupled Navier-Stokes-Fourier equations, handling complex 
+            thermal and viscous interactions.
+          </p>
+          <div class="equation">\[ \frac{\partial}{\partial t}\int_{\mathcal{V}} \mathbf{U} \, d\mathcal{V} + \oint_{\partial \mathcal{V}} \left( \mathbf{F}_c - \mathbf{F}_v \right) \cdot d\mathbf{S} = 0 \]</div>
+          <p>
+            While primarily targeted at simulating the extreme aerodynamic and thermal conditions of atmospheric 
+            reentry vehicles, the robust unstructured framework ensures broad applicability across a wide spectrum 
+            of high-speed compressible flow geometries.
+          </p>
 
-        <div class="feature-row">
-          <div class="feature-text">
-            <h3>Governing equations & formulation</h3>
-            <p>
-              The core algorithm employs a cell-centered <strong>Finite Volume Method (FVM)</strong> on 
-              unstructured meshes to solve the fully coupled Navier-Stokes-Fourier equations, handling complex 
-              thermal and viscous interactions.
-            </p>
-            <div class="equation">\[ \frac{\partial}{\partial t}\int_{\mathcal{V}} \mathbf{U} \, d\mathcal{V} + \oint_{\partial \mathcal{V}} \left( \mathbf{F}_c - \mathbf{F}_v \right) \cdot d\mathbf{S} = 0 \]</div>
-            <p>
-              While primarily targeted at simulating the extreme aerodynamic and thermal conditions of atmospheric 
-              reentry vehicles, the robust unstructured framework ensures broad applicability across a wide spectrum 
-              of high-speed compressible flow geometries.
-            </p>
-          </div>
-          <div class="feature-media">
-            <video autoplay loop muted playsinline controls><source src="assets/video/heat-conduction.mp4" type="video/mp4" /></video>
-            <p class="media-caption">Unstructured finite-volume domain mesh evolution.</p>
-          </div>
+          <br>
+
+          <h3>GPU acceleration & parallel computing</h3>
+          <p>
+            The primary objective is to implement advanced parallel computing techniques—specifically leveraging 
+            <strong>OpenACC directives</strong> within legacy Fortran architectures—to drastically reduce simulation turnaround times.
+          </p>
+          <div class="equation">\[ T_{\text{speedup}} = \frac{T_{\text{serial CPU}}}{T_{\text{parallel GPU}}} \]</div>
+          <p>
+            By refactoring compute-heavy kernels for hardware accelerators, the framework enables scalable, 
+            high-fidelity thermal and fluid analysis for complex, industrial-scale configurations.
+          </p>
+
         </div>
-
-        <div class="feature-row reverse">
-          <div class="feature-text">
-            <h3>GPU acceleration & parallel computing</h3>
-            <p>
-              The primary objective is to implement advanced parallel computing techniques—specifically leveraging 
-              <strong>OpenACC directives</strong> within legacy Fortran architectures—to drastically reduce simulation turnaround times.
-            </p>
-            <div class="equation">\[ T_{\text{speedup}} = \frac{T_{\text{serial CPU}}}{T_{\text{parallel GPU}}} \]</div>
-            <p>
-              By refactoring compute-heavy kernels for hardware accelerators, the framework enables scalable, 
-              high-fidelity thermal and fluid analysis for complex, industrial-scale configurations.
-            </p>
-          </div>
-          <div class="feature-media">
-            <video autoplay loop muted playsinline controls><source src="assets/video/lid-driven-cavity.mp4" type="video/mp4" /></video>
-            <img src="assets/img/projects/cfd/streamline.png" alt="Compressible flow field contours" loading="lazy" />
-            <p class="media-caption">Flow field contours and shock interaction tracking during execution.</p>
-          </div>
-        </div>
-
       </div>
     </section>
 
