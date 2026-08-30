@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Active Bionic Arm — Yashwanth Krishna Gampa</title>
+  <title>Variable Load Exoskeleton — Yashwanth Krishna Gampa</title>
   <meta name="description"
-    content="Iterative design, ANSYS Mechanical analysis, and 3D printing of a fully functional active compliant-based bionic arm with PD-based actuation." />
+    content="Iterative design, ANSYS simulation, and prototyping of a variable load off-loading knee exoskeleton utilizing a dual lead screw mechanism." />
   <link rel="icon" href="assets/img/logo.png" />
   <script>
     try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
@@ -45,15 +45,15 @@
     <section class="study-hero">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>Bionic Arm
+          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>Exoskeleton
         </div>
-        <h1>Active Flexible Compliant-Based Bionic Arm</h1>
+        <h1>Variable Load Off-Loading Knee Exoskeleton</h1>
         <div class="meta">
-          <span class="tag">ANSYS Mechanical</span><span class="tag">3D Printing</span><span class="tag">PD Control</span>
+          <span class="tag">ANSYS Mechanical</span><span class="tag">Dual Lead Screw</span><span class="tag">Biomechanics</span>
           <span class="tag">Hardware Prototyping</span>
         </div>
         <p class="study-lead">
-          Engineered a fully functional active bionic-arm prototype from concept to physical testing. The project focused heavily on simulating complex motion paths and optimizing structural compliance before manufacturing.
+          Engineered a variable load off-loading knee exoskeleton prototype designed to assist mobility while preventing muscle atrophy[cite: 1]. The project focused heavily on an iterative design cycle, mechanical lifting mechanisms, and structural simulation before physical testing[cite: 1].
         </p>
       </div>
     </section>
@@ -61,54 +61,54 @@
     <section class="section" style="padding-top:0;">
       <div class="container">
 
-        <!-- 1. ANSYS ANALYSIS -->
+        <!-- 1. ITERATIVE DESIGN & SIMULATION -->
         <div class="feature-row">
           <div class="feature-text">
-            <h3>ANSYS Mechanical Stress Analysis</h3>
+            <h3>Iterative Design & ANSYS Simulation</h3>
             <p>
-              Before any physical manufacturing, the core compliant design was iteratively analyzed in <strong>ANSYS Mechanical</strong>. The primary objective was to evaluate stress concentrations and structural deformation under real operating conditions.
+              The mechanical development spanned a comprehensive cycle of design and simulation, evolving from initial concepts to a finalized Version 5b which featured a redesigned lift mechanism[cite: 1].
             </p>
             <p>
-              This rigorous finite element analysis (FEA) ensured the flexible components could withstand repeated actuation cycles and payload stresses without fatigue failure, validating the integrity of the complex motion paths.
+              ANSYS simulation was utilized throughout the design cycle to validate structural integrity and ensure precise alignment at the knee joint under varying load conditions[cite: 1].
             </p>
           </div>
           <div class="feature-media">
-            <img src="assets/img/projects/bionic/ansys_stress_analysis.jpg" alt="ANSYS Mechanical Stress and Deformation Analysis" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
-            <p class="media-caption">Iterative stress and deformation analysis simulated in ANSYS Mechanical.</p>
+            <img src="assets/img/projects/exoskeleton/ansys_design_cycle.jpg" alt="Iterative ANSYS Mechanical Simulation" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
+            <p class="media-caption">Iterative design cycle and structural simulation from Version 1 to Version 5b[cite: 1].</p>
           </div>
         </div>
 
-        <!-- 2. PROTOTYPING & 3D PRINTING -->
+        <!-- 2. MECHANISM & PROTOTYPING -->
         <div class="feature-row reverse">
           <div class="feature-text">
-            <h3>3D Printing & Assembly</h3>
+            <h3>Dual Lead Screw Lifting Mechanism</h3>
             <p>
-              Once the stress and deformation profiles were fully optimized in the simulation environment, all custom components were isolated for additive manufacturing. 
+              To achieve reliable mechanical assistance, a custom dual lead screw setup was engineered for the primary lifting mechanism[cite: 1]. 
             </p>
             <p>
-              The parts were carefully <strong>3D printed</strong> and assembled to create a fully functional, active prototype. Translating the digital, compliant CAD model into a physical assembly required strict adherence to geometric tolerances to maintain the intended flexibility.
+              The threads on the lead screw allow for variable displacement at the joint[cite: 1]. This mechanical configuration maintains strict alignment at the knee joint while providing the flexibility needed to precisely control the quantity of the offloading load[cite: 1].
             </p>
           </div>
           <div class="feature-media">
-            <img src="assets/img/projects/bionic/mechanism_cad.jpg" alt="3D Printed Components and CAD" loading="lazy" style="border-radius: 8px;" />
-            <p class="media-caption">Translation of optimized CAD models into 3D-printed physical assemblies.</p>
+            <img src="assets/img/projects/exoskeleton/lift_mechanism_cad.jpg" alt="Dual Lead Screw Lifting Mechanism CAD" loading="lazy" style="border-radius: 8px;" />
+            <p class="media-caption">Dual lead screw setup maintaining continuous knee joint alignment[cite: 1].</p>
           </div>
         </div>
 
-        <!-- 3. ACTUATION & TESTING -->
+        <!-- 3. LOAD MECHANICS & VALIDATION -->
         <div class="feature-row">
           <div class="feature-text">
-            <h3>PD-Based Actuation & Live Testing</h3>
+            <h3>Variable Offloading & Biomechanical Impact</h3>
             <p>
-              To ensure the bionic arm responded smoothly and safely during human-robot interaction, the control system utilizes <strong>PD-based (Proportional-Derivative) actuation</strong>. 
+              Unlike standard knee exoskeletons that apply a fixed support level, this system provides adjustable offloading to mitigate the muscle atrophy and osteoporosis typically associated with complete load removal[cite: 1]. 
             </p>
             <p>
-              This control strategy significantly reduced response lag and improved positional accuracy. The final compliant design was successfully validated through live physical testing, proving the reliability of the simulated complex motion paths under real-world human integration.
+              The mechanical efficiency of the final prototype was successfully evaluated through displacement calculations; testing demonstrated that just 1mm of displacement at the knee joint effectively reduces the load on the cartilage by 16-20%[cite: 1].
             </p>
           </div>
           <div class="feature-media">
-            <img src="assets/img/projects/bionic/bionic_prototype.jpg" alt="Live testing of the bionic arm prototype" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
-            <p class="media-caption">Live validation of responsive actuation and complex motion paths.</p>
+            <img src="assets/img/projects/exoskeleton/exo_prototype.jpg" alt="Exoskeleton physical prototype testing" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
+            <p class="media-caption">Validation of variable displacement resulting in a 16-20% load reduction on cartilage[cite: 1].</p>
           </div>
         </div>
 
