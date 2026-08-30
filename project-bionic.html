@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Compliant Bionic Arm — Affan Khan</title>
+  <title>Active Bionic Arm — Yashwanth Krishna Gampa</title>
   <meta name="description"
-    content="An actively controlled, flexible 3D-printed bionic arm using compliant mechanisms — an affordable, adaptive prosthetic developed at IIT Guwahati." />
+    content="Iterative design, ANSYS Mechanical analysis, and 3D printing of a fully functional active compliant-based bionic arm with PD-based actuation." />
   <link rel="icon" href="assets/img/logo.png" />
   <script>
     try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
@@ -23,7 +23,7 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">Affan Khan <small>Mech × AI</small></a>
+      <a href="index.html" class="brand">Yashwanth Krishna Gampa <small>Mech × AI</small></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="work.html" class="active">Work</a></li>
@@ -49,91 +49,77 @@
         </div>
         <h1>Active Flexible Compliant-Based Bionic Arm</h1>
         <div class="meta">
-          <span class="tag">Compliant Mechanism</span><span class="tag">ESP32</span><span class="tag">PD Control</span>
-          <span class="tag">3D Printing</span><span class="tag">ANSYS</span>
+          <span class="tag">ANSYS Mechanical</span><span class="tag">3D Printing</span><span class="tag">PD Control</span>
+          <span class="tag">Hardware Prototyping</span>
         </div>
         <p class="study-lead">
-          A biomedical-device project under <strong>Prof. S. Kanagaraj</strong> at IIT Guwahati — a
-          lightweight, compliant, 3D-printed bionic arm for affordable and adaptive prosthetics.
+          Engineered a fully functional active bionic-arm prototype from concept to physical testing. The project focused heavily on simulating complex motion paths and optimizing structural compliance before manufacturing.
         </p>
-        <div class="study-banner"><img class="contain" src="assets/img/art/bionic.svg" alt="Compliant bionic arm schematic" /></div>
-
-        <div class="facts">
-          <div class="fact"><span class="k">Structure</span><span class="v">Compliant <small>no rigid joints</small></span></div>
-          <div class="fact"><span class="k">Material</span><span class="v">PLA <small>3D-printed</small></span></div>
-          <div class="fact"><span class="k">Controller</span><span class="v">ESP32 <small>PD loop</small></span></div>
-          <div class="fact"><span class="k">Input</span><span class="v">EMG <small>muscle sensors</small></span></div>
-        </div>
       </div>
     </section>
 
     <section class="section" style="padding-top:0;">
       <div class="container">
 
+        <!-- 1. ANSYS ANALYSIS -->
         <div class="feature-row">
           <div class="feature-text">
-            <h3>Overview</h3>
+            <h3>ANSYS Mechanical Stress Analysis</h3>
             <p>
-              The project develops an <strong>actively controlled, flexible bionic arm</strong> that uses
-              <strong>compliant mechanisms</strong> and <strong>additive manufacturing</strong> to cut
-              mechanical complexity and improve comfort. It is cost-effective, customisable, and mimics
-              natural motion without traditional rigid joints.
+              Before any physical manufacturing, the core compliant design was iteratively analyzed in <strong>ANSYS Mechanical</strong>. The primary objective was to evaluate stress concentrations and structural deformation under real operating conditions.
             </p>
-          </div>
-          <div class="feature-text">
-            <h3>Core concept</h3>
             <p>
-              Motion transfers through <strong>elastic deformation</strong> rather than discrete moving
-              parts:
+              This rigorous finite element analysis (FEA) ensured the flexible components could withstand repeated actuation cycles and payload stresses without fatigue failure, validating the integrity of the complex motion paths.
             </p>
-            <ul>
-              <li><strong>Muscle-sensor signals</strong> drive servo motors via an <strong>ESP32</strong>.</li>
-              <li><strong>3D-printed PLA</strong> structures keep it lightweight and biocompatible.</li>
-              <li><strong>PD control</strong> reduces latency and improves motion precision.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="feature-text">
-            <h3>Implementation &amp; analysis</h3>
-            <p>
-              The design was iteratively analysed in <strong>ANSYS Mechanical</strong> for stress and
-              deformation under real operating conditions. Once optimised, all components were
-              <strong>3D printed</strong> and assembled into a functional prototype with responsive
-              actuation.
-            </p>
-            <h3 style="margin-top:34px;">Achievements</h3>
-            <ul>
-              <li>A <strong>fully functional active bionic-arm prototype</strong>.</li>
-              <li>Reduced response lag and improved accuracy via PD-based actuation.</li>
-              <li>Compliant design validated for complex motion paths in simulation and testing.</li>
-            </ul>
           </div>
           <div class="feature-media">
-            <img src="assets/img/about/about-1.jpg" alt="Presenting the bionic arm prototype" loading="lazy" />
-            <p class="media-caption">The prototype, presented to my project guide.</p>
+            <img src="assets/img/projects/bionic/ansys_stress_analysis.jpg" alt="ANSYS Mechanical Stress and Deformation Analysis" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
+            <p class="media-caption">Iterative stress and deformation analysis simulated in ANSYS Mechanical.</p>
           </div>
         </div>
 
-        <div class="feature-row" style="grid-template-columns:1fr;">
+        <!-- 2. PROTOTYPING & 3D PRINTING -->
+        <div class="feature-row reverse">
           <div class="feature-text">
-            <h3>Future scope</h3>
-            <ul>
-              <li>Integrate <strong>tactile feedback</strong> using strain-gauge sensors.</li>
-              <li>Expand to <strong>multi-DOF actuation</strong> for greater flexibility.</li>
-              <li>Explore <strong>Nitinol-wire actuators</strong> for muscle-like motion and better bio-mimicry.</li>
-            </ul>
+            <h3>3D Printing & Assembly</h3>
+            <p>
+              Once the stress and deformation profiles were fully optimized in the simulation environment, all custom components were isolated for additive manufacturing. 
+            </p>
+            <p>
+              The parts were carefully <strong>3D printed</strong> and assembled to create a fully functional, active prototype. Translating the digital, compliant CAD model into a physical assembly required strict adherence to geometric tolerances to maintain the intended flexibility.
+            </p>
+          </div>
+          <div class="feature-media">
+            <img src="assets/img/projects/bionic/mechanism_cad.jpg" alt="3D Printed Components and CAD" loading="lazy" style="border-radius: 8px;" />
+            <p class="media-caption">Translation of optimized CAD models into 3D-printed physical assemblies.</p>
           </div>
         </div>
 
-      </div>
+        <!-- 3. ACTUATION & TESTING -->
+        <div class="feature-row">
+          <div class="feature-text">
+            <h3>PD-Based Actuation & Live Testing</h3>
+            <p>
+              To ensure the bionic arm responded smoothly and safely during human-robot interaction, the control system utilizes <strong>PD-based (Proportional-Derivative) actuation</strong>. 
+            </p>
+            <p>
+              This control strategy significantly reduced response lag and improved positional accuracy. The final compliant design was successfully validated through live physical testing, proving the reliability of the simulated complex motion paths under real-world human integration.
+            </p>
+          </div>
+          <div class="feature-media">
+            <img src="assets/img/projects/bionic/bionic_prototype.jpg" alt="Live testing of the bionic arm prototype" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
+            <p class="media-caption">Live validation of responsive actuation and complex motion paths.</p>
+          </div>
+        </div>
+
+      </div> 
     </section>
 
-    <a class="next-proj" href="project-supra.html">
+    <!-- Loops back to the MTP project -->
+    <a class="next-proj" href="project-mtp.html">
       <div class="container">
         <span class="np-label">Next project</span>
-        <span class="np-title">Supra SAE India
+        <span class="np-title">Parallelized Navier-Stokes-Fourier Solver
           <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
@@ -142,7 +128,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom" style="border:0;padding-top:0;">
-        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span>© <span data-year></span> Yashwanth Krishna Gampa. All rights reserved.</span>
         <span><a href="index.html#contact">Get in touch</a></span>
       </div>
     </div>
