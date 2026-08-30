@@ -1,8 +1,8 @@
-# Affan Khan — Personal Site
+# Yashwanth Krishna — Personal Site
 
 A hand-built static personal site. No build step, no frameworks, no icon libraries —
 just HTML, one CSS file and one vanilla JavaScript file. Open `index.html` in a
-browser (or serve the folder) to view. Live at https://maffank.github.io/
+browser (or serve the folder) to view. Live at https://yashwanth-krishna-g.github.io/
 ## Structure
 
 ```
