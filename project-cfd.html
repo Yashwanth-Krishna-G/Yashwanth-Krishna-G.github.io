@@ -64,6 +64,7 @@
     <section class="section" style="padding-top:0;">
       <div class="container">
 
+        <!-- 1. VORTEX SHEDDING SECTION -->
         <div class="feature-row">
           <div class="feature-text">
             <h3>Square Cylinder & Vortex Shedding</h3>
@@ -82,6 +83,7 @@
           </div>
         </div>
 
+        <!-- 2. ACCELERATION & VALIDATION FOR SQUARE CYLINDER -->
         <div class="feature-row reverse">
           <div class="feature-text">
             <h3>GPU Acceleration & Ansys Validation</h3>
@@ -89,8 +91,8 @@
               To drastically reduce compute times for the square cylinder simulation, the Fortran codebase was parallelized. The outer loop iterated with a time step of 0.001 up to 200 seconds, with the momentum and Pressure Poisson solvers held to a strict convergence criteria (\(L_\infty\) norm > 1e-6).
             </p>
             <ul style="margin-bottom: 24px; color: var(--text-muted); line-height: 1.6;">
-              <li><strong>OpenMP:</strong> Achieved a <strong>3.2x speedup</strong> over serial execution across multi-core architectures.</li>
-              <li><strong>OpenACC:</strong> Offloaded highly parallelizable kernels to the GPU, yielding a <strong>4.05x speedup</strong>.</li>
+              <li><strong>OpenMP:</strong> Achieved up to a <strong>3.85x speedup</strong> over serial execution across multi-core architectures.</li>
+              <li><strong>OpenACC:</strong> Offloaded highly parallelizable kernels to the GPU, yielding a <strong>3.26x speedup</strong>.</li>
             </ul>
             <p>
               Solver accuracy was rigorously validated across multiple Reynolds numbers by benchmarking computed drag coefficients (\(C_d\)) directly against Ansys Fluent results.
@@ -132,6 +134,7 @@
           </div>
         </div>
 
+        <!-- 3. LID DRIVEN CAVITY SECTION -->
         <div class="feature-row">
           <div class="feature-text">
             <h3>Fractional-Step & Lid-Driven Cavity</h3>
