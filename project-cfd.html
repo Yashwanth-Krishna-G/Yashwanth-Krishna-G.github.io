@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CFD Solvers from Scratch — Affan Khan</title>
+  <title>2D Incompressible Navier-Stokes Solver — Yashwanth Krishna Gampa</title>
   <meta name="description"
-    content="Numerical CFD solvers written from scratch in C and MATLAB — 2D transient heat conduction, lid-driven cavity flow and 1D wave propagation." />
+    content="A 2D fractional-step CFD solver on a staggered grid simulating lid-driven cavity and square cylinder flows, accelerated via OpenMP and OpenACC." />
   <link rel="icon" href="assets/img/logo.png" />
   <script>
     try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
@@ -24,7 +24,7 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">Affan Khan <small>Mech × AI</small></a>
+      <a href="index.html" class="brand">Yashwanth Krishna Gampa <small>Mech × AI</small></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="work.html" class="active">Work</a></li>
@@ -46,17 +46,17 @@
     <section class="study-hero">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>CFD Solvers
+          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>Navier-Stokes Solver
         </div>
-        <h1>CFD Solvers from Scratch</h1>
+        <h1>2D Incompressible Navier-Stokes Solver</h1>
         <div class="meta">
-          <span class="tag">C</span><span class="tag">MATLAB</span><span class="tag">Finite Difference</span>
-          <span class="tag">ME543 · IIT Guwahati</span>
+          <span class="tag">Fortran</span><span class="tag">OpenMP & OpenACC</span><span class="tag">Ansys</span>
+          <span class="tag">Personal Project</span>
         </div>
         <p class="study-lead">
-          Developed during <strong>ME543 — Computational Fluid Dynamics</strong> at IIT Guwahati:
-          numerical solvers written from a blank file in C and MATLAB for three classic CFD problems.
-          No black boxes — every stencil, boundary condition and stability limit implemented by hand.
+          Engineered a 2D fractional-step CFD solver on a staggered grid from scratch. Designed to accurately simulate 
+          complex fluid dynamics including lid-driven cavity flows and the vortex shedding of a square cylinder, 
+          with heavy emphasis on hardware-accelerated computing.
         </p>
         <div class="study-banner"><img src="assets/img/projects/cfd/fdm.png" alt="Finite-difference CFD visualisation" /></div>
       </div>
@@ -67,73 +67,67 @@
 
         <div class="feature-row">
           <div class="feature-text">
-            <h3>2D transient heat conduction</h3>
+            <h3>Fractional-Step & Lid-Driven Cavity</h3>
             <p>
-              How heat spreads through a rectangular plate over time, using an
-              <strong>explicit finite-difference method</strong>. The solver computes temperature at
-              every grid point and time step, producing a smooth animation of the entire transient.
+              The solver utilizes a fractional-step (projection) method on a staggered grid. An intermediate velocity field is first computed, followed by solving the Pressure Poisson Equation to enforce mass conservation.
             </p>
-            <div class="equation">\[ \frac{\partial T}{\partial t} = \alpha \left( \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} \right) \]</div>
+            <div class="equation">$$ \nabla^2 p^{n+1} = \frac{\rho}{\Delta t} \nabla \cdot \mathbf{u}^* $$</div>
             <p>
-              The plate starts cold and marches to steady state as heat enters from the top and bottom
-              surfaces at fixed temperatures.
+              The classic lid-driven cavity benchmark was used to validate the core vorticity and stream-function mechanics, successfully capturing the primary and secondary corner vortices at various Reynolds numbers.
             </p>
           </div>
           <div class="feature-media">
-            <video autoplay loop muted playsinline controls><source src="assets/video/heat-conduction.mp4" type="video/mp4" /></video>
-            <p class="media-caption">Transient temperature evolution in a rectangular plate.</p>
+            <video autoplay loop muted playsinline controls><source src="assets/video/lid-driven-cavity.mp4" type="video/mp4" /></video>
+            <img src="assets/img/projects/cfd/streamline.png" alt="Streamlines for lid-driven cavity" loading="lazy" />
+            <p class="media-caption">Primary and secondary vortices in the lid-driven cavity flow.</p>
           </div>
         </div>
 
         <div class="feature-row reverse">
           <div class="feature-text">
-            <h3>Lid-driven cavity flow</h3>
+            <h3>Square Cylinder & Vortex Shedding</h3>
             <p>
-              The classic CFD benchmark: fluid trapped in a square cavity, the top lid sliding
-              horizontally, a vortex spinning up inside.
+              The solver's capability was extended to external flows by simulating fluid passing over a square cylinder. 
+              The staggered grid formulation naturally handles the pressure-velocity coupling required to capture transient boundary layer separation.
             </p>
-            <div class="equation">\[ \nabla^2 \psi = -\omega \quad \text{and} \quad \frac{D\omega}{Dt} = \nu \nabla^2 \omega \]</div>
             <p>
-              Implemented with the <strong>vorticity–stream-function formulation</strong>, the solver
-              captures the main vortex and the smaller corner eddies as the flow develops toward
-              steady state.
+              The resulting simulation successfully visualizes the Von Kármán vortex street, demonstrating the solver's 
+              stability in capturing periodic vortex shedding behind the bluff body.
             </p>
           </div>
           <div class="feature-media">
-            <video autoplay loop muted playsinline controls><source src="assets/video/lid-driven-cavity.mp4" type="video/mp4" /></video>
-            <img src="assets/img/projects/cfd/streamline.png" alt="Streamlines for lid-driven cavity at Re 400" loading="lazy" />
-            <p class="media-caption">Flow evolution and streamlines (Re = 400) — primary and secondary vortices.</p>
+            <img src="assets/img/projects/cfd/vortex_shedding.gif" alt="Vortex shedding simulation" loading="lazy" style="border-radius: 8px;" />
+            <p class="media-caption">Transient vortex shedding (Von Kármán street) behind a square cylinder.</p>
           </div>
         </div>
 
         <div class="feature-row">
           <div class="feature-text">
-            <h3>1D wave propagation</h3>
+            <h3>GPU Acceleration & Ansys Validation</h3>
             <p>
-              How signals travel and decay, solved with three schemes — <strong>Upwind</strong>,
-              <strong>Lax</strong> and <strong>MacCormack</strong> — under identical conditions.
+              To drastically reduce compute times, the Fortran codebase was parallelized using shared-memory and hardware-accelerator directives. 
             </p>
-            <div class="equation">\[ \frac{\partial u}{\partial t} + c\,\frac{\partial u}{\partial x} = 0 \]</div>
+            <ul style="margin-bottom: 24px; color: var(--text-muted); line-height: 1.6;">
+              <li><strong>OpenMP:</strong> Achieved a <strong>3.2x speedup</strong> over serial execution across multi-core CPU architectures.</li>
+              <li><strong>OpenACC:</strong> Offloaded highly parallelizable kernels to the GPU, yielding a <strong>4.05x speedup</strong>.</li>
+            </ul>
             <p>
-              Two wave types were tested — a sharp step pulse and a smooth sine wave — to compare
-              stability and numerical diffusion between schemes.
+              Solver accuracy was rigorously validated across multiple Reynolds numbers by benchmarking computed drag coefficients (\(C_d\)) directly against Ansys Fluent results.
             </p>
           </div>
           <div class="feature-media">
-            <video autoplay loop muted playsinline controls><source src="assets/video/wave-step.mp4" type="video/mp4" /></video>
-            <p class="media-caption">Step-wave propagation (\(C_0 = 0.6\)).</p>
-            <video autoplay loop muted playsinline controls><source src="assets/video/wave-sine.mp4" type="video/mp4" /></video>
-            <p class="media-caption">Sine-wave propagation (\(C_0 = 0.6\)).</p>
+            <img src="assets/img/projects/cfd/ansys_validation.jpg" alt="Ansys Fluent Cd Validation" loading="lazy" style="border-radius: 8px; border: 1px solid var(--border);" />
+            <p class="media-caption">Drag coefficient validation against commercial Ansys Fluent data.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <a class="next-proj" href="project-aero.html">
+    <a class="next-proj" href="project-bionic.html">
       <div class="container">
         <span class="np-label">Next project</span>
-        <span class="np-title">SAE Aero Design UAV
+        <span class="np-title">Knee Exoskeleton "Smart-Dial" Joint
           <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
@@ -142,7 +136,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom" style="border:0;padding-top:0;">
-        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span>© <span data-year></span> Yashwanth Krishna Gampa. All rights reserved.</span>
         <span><a href="index.html#contact">Get in touch</a></span>
       </div>
     </div>
