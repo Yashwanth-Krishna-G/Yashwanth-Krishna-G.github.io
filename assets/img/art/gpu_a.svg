@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#121212" rx="15"/>
+
+  <!-- Subtle Grid Lines for Technical Aesthetic -->
+  <path d="M 0 100 L 800 100 M 0 200 L 800 200 M 0 300 L 800 300 M 0 400 L 800 400" stroke="#222" stroke-width="1" />
+  <path d="M 100 0 L 100 500 M 300 0 L 300 500 M 500 0 L 500 500 M 700 0 L 700 500" stroke="#222" stroke-width="1" />
+
+  <!-- Arrow Definitions -->
+  <defs>
+    <marker id="arrowRight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff5a36" />
+    </marker>
+    <marker id="arrowLeft" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#ff5a36" />
+    </marker>
+  </defs>
+
+  <!-- CPU (Host) Box -->
+  <rect x="80" y="140" width="220" height="220" rx="8" fill="#1a1a1a" stroke="#555" stroke-width="2"/>
+  <text x="190" y="220" fill="#f4f4f4" font-family="monospace" font-size="28" font-weight="bold" text-anchor="middle">CPU (Host)</text>
+  <text x="190" y="260" fill="#888" font-family="monospace" font-size="16" text-anchor="middle">System Memory</text>
+
+  <!-- GPU (Device) Box -->
+  <rect x="500" y="140" width="220" height="220" rx="8" fill="#1a1a1a" stroke="#ff5a36" stroke-width="2"/>
+  <text x="610" y="220" fill="#ff5a36" font-family="monospace" font-size="28" font-weight="bold" text-anchor="middle">GPU (Device)</text>
+  <text x="610" y="260" fill="#888" font-family="monospace" font-size="16" text-anchor="middle">High-Bandwidth Mem</text>
+
+  <!-- Top Arrow: Copy In -->
+  <path d="M 315 190 L 485 190" stroke="#ff5a36" stroke-width="3" marker-end="url(#arrowRight)"/>
+  <text x="400" y="175" fill="#ccc" font-family="monospace" font-size="14" text-anchor="middle">!$acc data copyin</text>
+
+  <!-- Middle Arrow: Compute -->
+  <path d="M 350 250 L 450 250" stroke="#555" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowRight)"/>
+  <text x="400" y="240" fill="#888" font-family="monospace" font-size="14" text-anchor="middle">Kernel Execution</text>
+
+  <!-- Bottom Arrow: Copy Out -->
+  <path d="M 485 310 L 315 310" stroke="#ff5a36" stroke-width="3" marker-end="url(#arrowLeft)"/>
+  <text x="400" y="335" fill="#ccc" font-family="monospace" font-size="14" text-anchor="middle">!$acc data copyout</text>
+</svg>
