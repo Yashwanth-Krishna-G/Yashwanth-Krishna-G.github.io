@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Dot Grid Pattern -->
+  <defs>
+    <pattern id="dotGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1.5" fill="#333"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#121212" rx="15"/>
+  <rect width="800" height="500" fill="url(#dotGrid)" rx="15"/>
+
+  <!-- Top Frame (Thigh) -->
+  <path d="M 370 80 L 430 80 L 415 220 L 385 220 Z" fill="#1a1a1a" stroke="#555" stroke-width="3"/>
+  
+  <!-- Bottom Frame (Calf) -->
+  <path d="M 385 280 L 415 280 L 430 420 L 370 420 Z" fill="#1a1a1a" stroke="#555" stroke-width="3"/>
+  
+  <!-- Central Knee Hinge -->
+  <circle cx="400" cy="250" r="40" fill="#121212" stroke="#ff5a36" stroke-width="4"/>
+  <circle cx="400" cy="250" r="18" fill="#1a1a1a" stroke="#555" stroke-width="2"/>
+  <circle cx="400" cy="250" r="6" fill="#ff5a36"/>
+
+  <!-- Left Lead Screw Mechanism -->
+  <line x1="330" y1="120" x2="330" y2="380" stroke="#777" stroke-width="8" stroke-dasharray="4,2"/>
+  <rect x="315" y="210" width="30" height="80" fill="#111" stroke="#00aaff" stroke-width="2" rx="4"/>
+  
+  <!-- Right Lead Screw Mechanism -->
+  <line x1="470" y1="120" x2="470" y2="380" stroke="#777" stroke-width="8" stroke-dasharray="4,2"/>
+  <rect x="455" y="210" width="30" height="80" fill="#111" stroke="#00aaff" stroke-width="2" rx="4"/>
+
+  <!-- Micro-Vibration & Heat Waves -->
+  <!-- Right side (Vibration) -->
+  <path d="M 455 250 A 60 60 0 0 1 515 310" fill="none" stroke="#00aaff" stroke-width="2" opacity="0.8"/>
+  <path d="M 465 240 A 80 80 0 0 1 535 330" fill="none" stroke="#00aaff" stroke-width="2" opacity="0.3"/>
+  <path d="M 475 230 A 100 100 0 0 1 555 350" fill="none" stroke="#00aaff" stroke-width="2" opacity="0.1"/>
+
+  <!-- Left side (Heat) -->
+  <path d="M 345 250 A 60 60 0 0 0 285 190" fill="none" stroke="#ff5a36" stroke-width="2" opacity="0.8"/>
+  <path d="M 335 260 A 80 80 0 0 0 265 170" fill="none" stroke="#ff5a36" stroke-width="2" opacity="0.3"/>
+  <path d="M 325 270 A 100 100 0 0 0 245 150" fill="none" stroke="#ff5a36" stroke-width="2" opacity="0.1"/>
+
+  <!-- Technical Callouts -->
+  <line x1="485" y1="210" x2="560" y2="160" stroke="#555" stroke-width="2"/>
+  <text x="570" y="155" fill="#aaa" font-family="monospace" font-size="14">DUAL LEAD SCREW</text>
+  
+  <line x1="315" y1="290" x2="240" y2="340" stroke="#555" stroke-width="2"/>
+  <text x="230" y="355" fill="#ff5a36" font-family="monospace" font-size="14" text-anchor="end">CARTILAGE LOAD: -20%</text>
+</svg>
