@@ -135,6 +135,33 @@
         </div>
 
       </div> 
+
+      <!-- 4. MPI VS OPENMP SCALING -->
+        <div class="feature-row reverse">
+          <div class="feature-text">
+            <h3>Hardware Scaling: MPI vs. OpenMP</h3>
+            <p>
+              To evaluate parallel efficiency across distributed and shared memory architectures, the classical solvers were scaled up to 16 processors. Peak parallel efficiency was observed at 4 processors before communication overhead dominated.
+            </p>
+            <p>
+              Across both the 256x256 and 512x512 grids, the distributed memory model (MPI) consistently outperformed the shared memory model (OpenMP), yielding up to a 3.61x speed-up compared to OpenMP's ceiling of 2.38x.
+            </p>
+          </div>
+          <div class="feature-media">
+            <div class="perf-box">
+              <h4 class="perf-title">Peak Speed-up Comparison (4 Processors)</h4>
+              <table class="perf-table">
+                <tr><th>Solver</th><th>Grid Size</th><th>OpenMP</th><th>MPI</th></tr>
+                <tr><td>Jacobi</td><td>256x256</td><td>1.99x</td><td style="color: var(--accent);">3.59x</td></tr>
+                <tr><td>Gauss-Seidel</td><td>256x256</td><td>2.38x</td><td style="color: var(--accent);">3.61x</td></tr>
+                <tr><td>Red-Black G.S.</td><td>256x256</td><td>1.91x</td><td style="color: var(--accent);">3.49x</td></tr>
+                <tr><td>Jacobi</td><td>512x512</td><td>1.83x</td><td style="color: var(--accent);">3.14x</td></tr>
+                <tr><td>Gauss-Seidel</td><td>512x512</td><td>2.18x</td><td style="color: var(--accent);">2.88x</td></tr>
+                <tr><td>Red-Black G.S.</td><td>512x512</td><td>1.89x</td><td style="color: var(--accent);">2.87x</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
     </section>
 
     <a class="next-proj" href="project-cfd.html">
