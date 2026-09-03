@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Supra SAE India — Affan Khan</title>
+  <title>CNN-Based Surrogate Model for Reynolds-Number-Parameterized Vortex Shedding Flows — Yashwanth Krishna Gampa</title>
   <meta name="description"
-    content="Powertrain design and manufacturing for a Supra SAE India formula-style race car — engine mounts, sprockets and 40+ CAD components." />
+    content="Developing a deep learning surrogate model in PyTorch to predict unsteady flow fields across unseen Reynolds numbers, trained on custom Fortran CFD data." />
   <link rel="icon" href="assets/img/logo.png" />
   <script>
     try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
@@ -23,7 +23,7 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">Affan Khan <small>Mech × AI</small></a>
+      <a href="index.html" class="brand">Yashwanth Krishna Gampa <small>Mech × AI</small></a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
       <ul class="nav-links">
         <li><a href="work.html" class="active">Work</a></li>
@@ -45,72 +45,87 @@
     <section class="study-hero">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>Supra SAE India
+          <a href="index.html">Home</a><span class="sep">/</span><a href="work.html">Projects</a><span class="sep">/</span>CNN Surrogate Model
         </div>
-        <h1>Supra SAE India — Powertrain</h1>
+        <h1>CNN-Based Surrogate Model for Reynolds-Number-Parameterized Vortex Shedding Flows</h1>
         <div class="meta">
-          <span class="tag">SolidWorks</span><span class="tag">FEA</span><span class="tag">Powertrain</span>
-          <span class="tag">B.Tech Major Project</span><span class="tag">2018 – 2019</span>
+          <span class="tag">PyTorch & Deep Learning</span><span class="tag">Fortran</span><span class="tag">OpenMP</span>
+          <span class="tag" style="background: rgba(0, 170, 255, 0.1); color: #00aaff; border: 1px solid #00aaff;">Ongoing Project</span>
         </div>
         <p class="study-lead">
-          As part of Supra SAE India 2019, our team designed and built a formula-style race car to SAE
-          standards. My focus: the <strong>powertrain system</strong>, from CAD to cost report.
+          An ongoing initiative to bridge traditional Computational Fluid Dynamics (CFD) with Deep Learning. The overarching goal is to train a Convolutional Neural Network (CNN) to instantly predict unsteady fluid flow fields across varying Reynolds numbers, drastically reducing the computational bottleneck of numerical integration.
         </p>
-        <div class="study-banner"><img class="contain" src="assets/img/art/supra.svg" alt="Supra SAE car schematic with powertrain callouts" /></div>
-
-        <div class="facts">
-          <div class="fact"><span class="k">CAD components</span><span class="v">40+</span></div>
-          <div class="fact"><span class="k">My subsystem</span><span class="v">Powertrain</span></div>
-          <div class="fact"><span class="k">Chassis</span><span class="v">Tube frame</span></div>
-          <div class="fact"><span class="k">Event</span><span class="v">National <small>competed</small></span></div>
-        </div>
       </div>
     </section>
 
     <section class="section" style="padding-top:0;">
       <div class="container">
 
-        <div class="feature-row" style="grid-template-columns:1fr 1fr;">
+        <!-- 1. WHAT IS DONE SO FAR -->
+        <div class="feature-row">
           <div class="feature-text">
-            <h3>Design &amp; manufacturing</h3>
+            <h3>Phase 1: High-Fidelity Data Generation (Completed)</h3>
             <p>
-              I designed, analysed and fabricated powertrain components including
-              <strong>engine mounts</strong> and <strong>transmission sprockets</strong>, and developed
-              detailed <strong>CAD models for 40+ components</strong> across subsystems — integrating
-              them into the full vehicle assembly in SolidWorks with an eye on weight, manufacturability
-              and vibration stability.
+              To train a robust surrogate model, a massive, high-fidelity dataset of fluid behavior was required. Rather than relying on external datasets, I engineered a custom fractional-step Navier-Stokes solver in Fortran.
+            </p>
+            <p>
+              The data-generation pipeline was parallelized using OpenMP across 6 threads. This allowed for the automated batch-generation of unsteady 2D vortex shedding simulations across a comprehensive Reynolds number sweep (Re 60–180). The pipeline efficiently dumps the velocity and pressure fields into raw binary snapshots, which are then mapped and parsed directly into multi-dimensional NumPy arrays via a custom Python data loader.
             </p>
           </div>
-          <div class="feature-text">
-            <h3>Integration &amp; analysis</h3>
-            <p>
-              The powertrain was integrated into a tube-frame chassis. <strong>FEA and dynamic
-              simulations</strong> ensured high-stress regions were reinforced while keeping overall
-              mass optimised. The final design met safety and performance criteria, ready for
-              manufacturing and on-track evaluation.
-            </p>
+          <div class="feature-media">
+            <style>
+              .code-box { background: #1a1a1a; border: 1px solid var(--border); border-radius: 8px; padding: 20px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #a9b7c6; line-height: 1.5; }
+              .code-comment { color: #808080; font-style: italic; }
+              .code-keyword { color: #cc7832; font-weight: bold; }
+              .code-string { color: #6a8759; }
+              .code-func { color: #ffc66d; }
+            </style>
+            <div class="code-box">
+              <span class="code-comment"># Extracting Fortran binary dumps into PyTorch-ready tensors</span><br>
+              <span class="code-keyword">def</span> <span class="code-func">load_fluid_snapshot</span>(filepath, nx=<span class="code-keyword">666</span>, ny=<span class="code-keyword">360</span>):<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;raw_data = np.fromfile(filepath, dtype=np.float64)<br><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># Slice 1D binary array into physics fields</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;u_flat = raw_data[<span class="code-keyword">0</span> : nx*ny]<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;v_flat = raw_data[nx*ny : <span class="code-keyword">2</span>*nx*ny]<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;p_flat = raw_data[<span class="code-keyword">2</span>*nx*ny : <span class="code-keyword">3</span>*nx*ny]<br><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># Reshape using Fortran memory ordering</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;u = u_flat.reshape((nx, ny), order=<span class="code-string">'F'</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;v = v_flat.reshape((nx, ny), order=<span class="code-string">'F'</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;p = p_flat.reshape((nx, ny), order=<span class="code-string">'F'</span>)<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> u, v, p
+            </div>
+            <p class="media-caption">Snippet from the custom Python pipeline used to parse binary Fortran data into ML-ready arrays.</p>
           </div>
         </div>
 
-        <div class="feature-row" style="grid-template-columns:1fr;">
+        <!-- 2. WHERE WE ARE GOING -->
+        <div class="feature-row reverse">
           <div class="feature-text">
-            <h3>Cost analysis &amp; competition</h3>
+            <h3>Phase 2: Spatiotemporal Surrogate Modeling (Ongoing)</h3>
             <p>
-              I prepared a detailed <strong>cost-analysis report</strong> covering materials, machining
-              and manufacturing feasibility, benchmarking each part against SAE India's budget criteria.
-              The vehicle was successfully presented and competed at the national event — robust design,
-              precision manufacturing and a lot of teamwork.
+              With the foundational dataset generated, the project is currently in the active modeling phase. I am building an end-to-end deep learning pipeline using PyTorch. 
             </p>
+            <p>
+              The objective is to train a Convolutional Neural Network (CNN) to map the spatiotemporal characteristics of the Von Kármán vortex street. Once fully trained and validated, this surrogate model will be capable of predicting accurate velocity and pressure contours for entirely <strong>unseen</strong> Reynolds numbers—reducing the time to acquire a flow field approximation from hours of numerical iteration down to a fraction of a second.
+            </p>
+          </div>
+          <div class="feature-media">
+            <div style="background: rgba(255,255,255,0.03); border: 1px dashed var(--border); border-radius: 8px; height: 250px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+              <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">
+                [ PyTorch CNN Architecture & Training Validation Plots ]<br><br>
+                Model training and tuning are currently ongoing.<br>Results will be published here upon completion in October.
+              </p>
+            </div>
           </div>
         </div>
 
-      </div>
+      </div> 
     </section>
 
-    <a class="next-proj" href="project-maker.html">
+    <a class="next-proj" href="index.html">
       <div class="container">
-        <span class="np-label">Next project</span>
-        <span class="np-title">Maker Builds — IoT &amp; 3D Printing
+        <span class="np-label">Return to</span>
+        <span class="np-title">Portfolio Home
           <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </a>
@@ -119,7 +134,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom" style="border:0;padding-top:0;">
-        <span>© <span data-year></span> Affan Khan. All rights reserved.</span>
+        <span>© <span data-year></span> Yashwanth Krishna Gampa. All rights reserved.</span>
         <span><a href="index.html#contact">Get in touch</a></span>
       </div>
     </div>
