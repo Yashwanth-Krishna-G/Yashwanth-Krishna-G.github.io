@@ -1,1 +1,47 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for arrowhead -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#00aaff" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="250" fill="#1e1e1e" rx="8"/>
+  
+  <!-- Contour lines representing the quadratic form f(x) = 1/2 x^T A x - b^T x -->
+  <g transform="translate(220, 110) rotate(-25)">
+    <ellipse cx="0" cy="0" rx="160" ry="70" fill="none" stroke="#333" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="120" ry="50" fill="none" stroke="#444" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#666" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="40" ry="12" fill="none" stroke="#ff7f50" stroke-width="2"/>
+    <!-- Global minimum (Solution x*) -->
+    <circle cx="0" cy="0" r="4" fill="#ff7f50"/>
+  </g>
+
+  <!-- Conjugate Gradient Iteration Path (x_0 -> x_1 -> x_2 -> x*) -->
+  <!-- Initial guess x_0 -->
+  <circle cx="80" cy="200" r="4" fill="#00aaff"/>
+  <text x="65" y="215" fill="#aaa" font-family="monospace" font-size="12">x_0</text>
+
+  <!-- Step 1 to x_1 -->
+  <path d="M 80 200 L 150 150" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2 to x_2 -->
+  <path d="M 150 150 L 195 125" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Step 3 to Solution -->
+  <path d="M 195 125 L 215 112" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Matrix/Parallelization Graphic Element -->
+  <g transform="translate(30, 30)">
+    <rect x="0" y="0" width="12" height="12" fill="#ff4444" opacity="0.8" rx="2"/>
+    <rect x="16" y="0" width="12" height="12" fill="#ff4444" opacity="0.8" rx="2"/>
+    <rect x="32" y="0" width="12" height="12" fill="#ff4444" opacity="0.8" rx="2"/>
+    
+    <rect x="0" y="16" width="12" height="12" fill="#00aaff" opacity="0.8" rx="2"/>
+    <rect x="16" y="16" width="12" height="12" fill="#00aaff" opacity="0.8" rx="2"/>
+    <rect x="32" y="16" width="12" height="12" fill="#00aaff" opacity="0.8" rx="2"/>
+  </g>
+</svg>
 
