@@ -1,1 +1,22 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="250" fill="#1e1e1e" rx="8"/>
+  
+  <!-- Hot Compressible Flow Streamlines -->
+  <path d="M 20 130 C 80 130, 100 60, 200 60 C 300 60, 350 100, 380 110" stroke="#ff4444" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 20 140 C 70 140, 90 75, 200 75 C 290 75, 340 105, 380 115" stroke="#ff7f50" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M 20 150 C 80 150, 90 190, 200 190 C 300 190, 350 130, 380 120" stroke="#ff4444" stroke-width="2" fill="none" opacity="0.6"/>
+
+  <!-- Turbine Blade Cross-Section -->
+  <path d="M 100 140 C 90 70, 200 70, 320 115 C 220 160, 130 180, 100 140 Z" fill="#2a2a2a" stroke="#ff7f50" stroke-width="2"/>
+  
+  <!-- Heat Transfer Gradient (Simulated hot outer edge) -->
+  <path d="M 100 140 C 90 70, 200 70, 320 115 C 220 160, 130 180, 100 140 Z" fill="#ff4444" opacity="0.2"/>
+
+  <!-- Internal Liquid Cooling Channels -->
+  <circle cx="125" cy="115" r="12" fill="#00aaff" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="170" cy="105" r="10" fill="#00aaff" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="215" cy="105" r="8" fill="#00aaff" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="260" cy="111" r="5.5" fill="#00aaff" stroke="#ffffff" stroke-width="1.5"/>
+</svg>
 
