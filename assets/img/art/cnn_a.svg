@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="250" fill="#1e1e1e" rx="8"/>
+  
+  <!-- Input Parameter (Re) -->
+  <rect x="20" y="105" width="40" height="40" rx="4" fill="#333" stroke="#ff7f50" stroke-width="2"/>
+  <text x="40" y="130" fill="#fff" font-family="monospace" font-size="14" text-anchor="middle">Re</text>
+  
+  <!-- Connection Arrow -->
+  <path d="M 65 125 L 95 125" stroke="#666" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
+  
+  <!-- CNN Layers -->
+  <rect x="100" y="85" width="20" height="80" rx="2" fill="#00aaff" fill-opacity="0.2" stroke="#00aaff" stroke-width="1.5"/>
+  <rect x="130" y="75" width="20" height="100" rx="2" fill="#00aaff" fill-opacity="0.4" stroke="#00aaff" stroke-width="1.5"/>
+  <rect x="160" y="65" width="20" height="120" rx="2" fill="#00aaff" fill-opacity="0.6" stroke="#00aaff" stroke-width="1.5"/>
+  <rect x="190" y="75" width="20" height="100" rx="2" fill="#00aaff" fill-opacity="0.4" stroke="#00aaff" stroke-width="1.5"/>
+  <rect x="220" y="85" width="20" height="80" rx="2" fill="#00aaff" fill-opacity="0.2" stroke="#00aaff" stroke-width="1.5"/>
+  
+  <!-- Connection Arrow -->
+  <path d="M 245 125 L 275 125" stroke="#666" stroke-width="2" stroke-dasharray="4,4" fill="none"/>
+  
+  <!-- Output Flow Field (Stylized Vortex Street) -->
+  <rect x="280" y="75" width="100" height="100" rx="4" fill="#2a2a2a" stroke="#ff7f50" stroke-width="2"/>
+  
+  <!-- Cylinder -->
+  <circle cx="300" cy="125" r="8" fill="#fff"/>
+  
+  <!-- Alternating Vortices -->
+  <ellipse cx="330" cy="110" rx="12" ry="6" fill="#ff4444" fill-opacity="0.7"/>
+  <ellipse cx="355" cy="140" rx="12" ry="6" fill="#4444ff" fill-opacity="0.7"/>
+  <ellipse cx="375" cy="105" rx="12" ry="6" fill="#ff4444" fill-opacity="0.4"/>
+</svg>
