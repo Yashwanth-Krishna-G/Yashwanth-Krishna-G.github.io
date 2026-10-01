@@ -4,6 +4,155 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Yashwanth Krishna Gampa</title>
+  <meta name="description"
+    content="The full project index — CFD, numerical methods, parallel computing, and mechanical design by Yashwanth Krishna Gampa." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch (e) { }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Yashwanth Krishna Gampa <small>Mech × CAE</small></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="life.html">Life</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle light/dark theme">
+            <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="study-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Projects</div>
+        <h1>The project <span class="it" style="font-style:italic;color:var(--accent);">index.</span></h1>
+        <p class="study-lead">
+          Everything on one shelf — computational fluid dynamics, machine learning surrogates, parallel solvers, and mechanical design. Filter by discipline or browse the lot.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:56px;">
+      <div class="container">
+
+        <div class="filters reveal">
+          <button class="chip on" data-filter="all">All</button>
+          <button class="chip" data-filter="cfd">CFD &amp; Solvers</button>
+          <button class="chip" data-filter="ai">AI &amp; ML</button>
+          <button class="chip" data-filter="hardware">Hardware &amp; CAD</button>
+        </div>
+
+        <div class="grid grid-3">
+
+          <a href="project_mtp.html" class="card reveal" data-cat="cfd">
+            <div class="card-media"><img class="contain" src="assets/img/art/gpu_a.svg" alt="Solver schematic" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Parallelized Navier-Stokes-Fourier Solver</h3>
+              <p>M.Tech thesis — parallelizing an in-house unstructured cell-centered FVM solver for compressible flows using MPI and OpenACC.</p>
+              <div class="tags"><span class="tag">Fortran</span><span class="tag">GPU Accel.</span><span class="tag">Compressible</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-dnn.html" class="card reveal" data-cat="ai cfd">
+            <div class="card-media"><img class="contain" src="assets/img/art/cnn_a.svg" alt="CNN surrogate model schematic" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>CNN-Based Surrogate Model for Vortex Shedding</h3>
+              <p>Developing deep learning surrogate models parameterized by Reynolds number to output vortex shedding flow fields.</p>
+              <div class="tags"><span class="tag">PyTorch</span><span class="tag">Deep Learning</span><span class="tag">Fortran</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-cfd.html" class="card reveal" data-cat="cfd">
+            <div class="card-media"><img class="contain" src="assets/img/art/sqaure_cylinder.svg" alt="Von Karman vortex street" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>2D Incompressible Navier-Stokes Solver</h3>
+              <p>Numerical methods implementation featuring fractional-step schemes on a staggered grid.</p>
+              <div class="tags"><span class="tag">Numerical Methods</span><span class="tag">C</span><span class="tag">Fractional Step</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-HC-solver.html" class="card reveal" data-cat="cfd">
+            <div class="card-media"><img class="contain" src="assets/img/art/kry.svg" alt="Krylov Subspaces" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>CG &amp; PCG Iterative Solvers</h3>
+              <p>Implementation of Krylov subspace methods and parallel computing acceleration techniques.</p>
+              <div class="tags"><span class="tag">Krylov Methods</span><span class="tag">Parallel Computing</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-btp.html" class="card reveal" data-cat="cfd">
+            <div class="card-media"><img class="contain" src="assets/img/art/tb_a.svg" alt="Turbine" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Turbine Blade Cooling Analysis</h3>
+              <p>Utilizing liquid coolants for turbine blade thermal management evaluated via Fortran-driven compressible flow simulations.</p>
+              <div class="tags"><span class="tag">Fortran</span><span class="tag">GPU Accel.</span><span class="tag">Compressible</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a href="project-bionic.html" class="card reveal" data-cat="hardware">
+            <div class="card-media"><img class="contain" src="assets/img/art/knee.svg" alt="Dual lead screw" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Knee Exoskeleton "Smart-Dial" Joint</h3>
+              <p>Mechanical design and physical prototyping of an off-loading orthosis joint.</p>
+              <div class="tags"><span class="tag">Mechanical Design</span><span class="tag">Prototyping</span><span class="tag">CAD</span></div>
+              <span class="card-cta">Case study
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:0;padding-top:0;">
+        <span>© <span data-year></span> Yashwanth Krishna Gampa. All rights reserved.</span>
+        <span><a href="index.html#contact">Get in touch</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Affan Khan</title>
   <meta name="description"
     content="The full project index — AI-driven topology optimisation, turbomachinery CFD, aircraft design, mechatronics and maker builds by Affan Khan." />
